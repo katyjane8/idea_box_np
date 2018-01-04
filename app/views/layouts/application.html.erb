@@ -13,7 +13,7 @@
     </div>
         <% if current_user && current_user.admin? %>
         <p><%= link_to "", admin_dashboard_index_path %></p>
-        <% elsif  current_user %>
+        <% elsif current_user %>
         <p><%= link_to "", user_path(current_user) %></p>
         <% else %>
          <p><%= link_to '', root_path %>
