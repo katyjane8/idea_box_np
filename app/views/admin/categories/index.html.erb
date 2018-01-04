@@ -2,7 +2,7 @@
   <h1>Admin Categories</h1>
   <%= link_to "Create Category", new_admin_category_path %><br>
   <%= link_to "Back to Admin Dashboard", admin_dashboard_index_path %>
-      <p><%= @categories.each do |category| %></p>
+      <p><% @categories.each do |category| %></p>
       <p><%= category.title %></p>
       <%= link_to "edit category", edit_admin_category_path(category) %><br>
       <%= link_to "delete category", admin_category_path(category), method: "delete" %><br>

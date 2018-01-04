@@ -3,7 +3,6 @@ require 'rails_helper'
 describe "user can edit an idea" do
   it "clicks edit and the idea is edited" do
     user = create(:user)
-    image = create(:image)
     idea1 = Idea.create!(title: "this idea is cool", body: "stuff", user: user, category: build(:category))
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)

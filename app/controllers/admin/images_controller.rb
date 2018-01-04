@@ -25,6 +25,6 @@ class Admin::ImagesController < Admin::BaseController
     private
 
     def image_params
-      params.require(:image).permit(:name, :url, :image)
+      params.require(:image).permit(:name, :url)
     end
 end

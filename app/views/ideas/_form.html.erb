@@ -11,11 +11,13 @@
 
         <p>Check the box to add images:</p>
         <div class="images">
-          <%= f.label :url %>
-          <% @images.each do |image| %>
-          <%= image_tag image.url.url(:thumb) %>
-          <%= check_box_tag('idea[image_ids][]', image.id, @idea.image_ids.include?(image.id), id: "image-#{image.id}") %>
-          <% end %>
+          <%= f.label :image %>
+          <% if !@images.nil? %>
+            <% @images.each do |image| %>
+            <%= image_tag(image.url, size: "200x150", alt: image.name)%>
+            <%= check_box_tag('idea[image_ids][]', image.id, @idea.image_ids.include?(image.id), id: "image-#{image.id}") %>
+            <% end %>
+            <% end %>
         </div>
         <%= f.submit class: "sub-btn" %>
       <% end %>
