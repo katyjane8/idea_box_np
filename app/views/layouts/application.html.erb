@@ -12,7 +12,7 @@
       <li> <%= link_to 'Log Out', logout_path, method: :delete %> </li>
     </div>
         <% if current_user && current_user.admin? %>
-        <p><%= link_to "", admin_dashboard_index_path %></p>
+        <p><%= link_to "dashboard", admin_dashboard_index_path %></p>
         <% elsif current_user %>
         <p><%= link_to "", user_path(current_user) %></p>
         <% else %>
