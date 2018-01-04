@@ -14,10 +14,10 @@
         <% if current_user && current_user.admin? %>
         <p><%= link_to "dashboard", admin_dashboard_index_path %></p>
         <% elsif current_user %>
-        <p><%= link_to "", user_path(current_user) %></p>
+        <p><%= link_to "dashboard", user_path(current_user) %></p>
         <% else %>
-         <p><%= link_to '', root_path %>
-      <% end %>
+        <p><%= link_to 'home', root_path %>
+        <% end %>
     <p class="flash">
       <% flash.each do |message_type, message| %>
         <%= message %>
