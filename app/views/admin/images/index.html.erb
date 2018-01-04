@@ -1,0 +1,9 @@
+  <body>
+    <h1>Image Index</h1>
+    <%= link_to "Create Image", new_admin_image_path %><br>
+    <%= link_to "Back to Admin Dashboard", admin_dashboard_index_path %>
+      <p><%= @images.each do |image| %></p>
+      <p><%= image_tag image.image.url(:medium) %></p>
+    <%= link_to "delete", admin_image_path(image), method: "delete" %><br>
+    <% end %>
+  </body>

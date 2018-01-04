@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya|Poppins');
+
+
+$body-bg: #c4c6c6;
+$form-bg: #13232f;
+$white: #ffffff;
+
+$main: #80bcc0;
+$main-light: lighten($main,5%);
+$main-dark: darken($main,5%);
+
+$gray-light: #c4c6c6;
+$gray: #ddd;
+
+$thin: 300;
+$normal: 400;
+$bold: 600;
+$br: 4px;
+
+body {
+  background:$body-bg;
+  font-family: 'Poppins', sans-serif;
+}
+body.show {
+  background-color: #d5e7e9;
+  background-repeat: no-repeat;
+  background-image: url(PaperAirplanes.jpeg);
+  background-size: cover;
+}
+a {
+  color: #e04e40;
+  text-decoration: none;
+}
+h3 {
+  text-align:center;
+  color:$white;
+  font-weight:$thin;
+  margin:0 0 40px;
+  font-size: 30px;
+}
+.form {
+  color: $main;
+  background: $form-bg;
+  padding: 40px;
+  max-width:600px;
+  margin:40px auto;
+  border-radius:$br;
+  box-shadow:0 4px 10px 4px $form-bg;
+}
+.button {
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 320px;
+  text-align: center;
+  a {
+    background:$main;
+    padding: 1em 2.4em;
+    font-size: .9em;
+    margin: 1em;
+    color:$white;
+    text-decoration:none;
+    flex-grow: 1;
+    text-align: center;
+    transition:.5s ease;
+    &:hover {
+      color:$form-bg;
+    }
+  }
+}
+.idea-container {
+  background-color: $white;
+  padding: 10px;
+  width: 30%;
+  margin: 10px;
+}
+.field-wrap {
+  position: relative;
+  margin-bottom: 40px;
+}
+label {
+  display: none;
+}
+input, textarea {
+  font-size: 22px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid $gray-light;
+  color: $white;
+  border-radius: 0;
+  transition:border-color .25s ease, box-shadow .25s ease;
+  &:focus {
+		outline:0;
+		border-color:$main;
+  }
+}
+textarea {
+  border:2px solid $gray-light;
+  resize: vertical;
+}
+.sub-btn {
+  text-align: center;
+  background:$main;
+  margin: 10px auto;
+  max-width: 320px;
+}
+.nav {
+  li {
+    float: right;
+    padding: 14px 16px;
+    text {
+    color: $white;
+    align: center;
+    decoration: none;
+    }
+  }
+  li a:hover {
+    background-color: #111;
+  }
+  overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: $main;
+}

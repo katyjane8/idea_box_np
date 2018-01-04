@@ -1,0 +1,23 @@
+<div class="form">
+    <div class="field-wrap">
+      <%= form_for [current_user, @idea] do |f| %>
+        <%= f.label :title %>
+        <%= f.text_field :title, placeholder: "Idea Title*" %><br><br>
+
+        <%= f.label :body %>
+        <%= f.text_area :body, placeholder: "Idea*" %><br><br>
+
+        <%= f.collection_select(:category_id, Category.all, :id, :title) %><br><br>
+
+        <p>Check the box to add images:</p>
+        <div class="images">
+          <%= f.label :url %>
+          <% @images.each do |image| %>
+          <%= image_tag image.url.url(:thumb) %>
+          <%= check_box_tag('idea[image_ids][]', image.id, @idea.image_ids.include?(image.id), id: "image-#{image.id}") %>
+          <% end %>
+        </div>
+        <%= f.submit class: "sub-btn" %>
+      <% end %>
+    </div>
+  </div>

@@ -1,0 +1,10 @@
+<div class="show">
+    <h1>Welcome, <%= @admin.username %>!</h1>
+    <%= link_to "Create Idea", new_user_idea_path(current_user) %>
+    <div class="idea-container">
+    <% @user.ideas.each do |idea| %>
+    <h3><%= link_to idea.title, admin_idea_path(idea) %></h3><br>
+    <p>Posted on: <%= idea.created_at.strftime("%b %d, %Y") %></p>
+    <% end %>
+    </div>
+</div>

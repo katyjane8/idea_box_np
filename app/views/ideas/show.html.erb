@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Idea</title>
+  </head>
+  <body class="show">
+    <h2>Idea:</h2>
+    <div class="idea-container">
+    Idea Title: <%= @idea.title %><br>
+    Idea Content: <%= @idea.body %><br>
+    Idea Category: <%= @idea.category.title %><br>
+    <% if @idea.images.empty? %>
+      <p>There are no images</p>
+    <% else %>Images:
+    <% @idea.images.each do |image| %>
+    <%= image_tag image.image(:medium) %>
+    <% end %>
+    <% end %>
+    <p><%= link_to "Delete Idea", user_idea_path(current_user, @idea), method: :delete %></p>
+    <p><%= link_to "Edit Idea", edit_user_idea_path(current_user, @idea) %></p>
+    <p><%= link_to "Back to #{current_user.username} homepage", user_path(current_user) %></p>
+    </div>
+  </body>
+</html>

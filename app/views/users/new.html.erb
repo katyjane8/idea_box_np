@@ -1,0 +1,13 @@
+<div class="form">
+  <h3>Start Idea Boxing!</h3>
+    <div class="field-wrap">
+      <%= form_for @user do |f| %>
+      <%= f.label :username %>
+      <%= f.text_field :username, placeholder: "New User Name*" %>
+      <p><%= f.label :password %></p>
+      <%= f.password_field :password, placeholder: "Choose a Password*" %><br>
+      <p>* required field</p>
+        <%= f.submit "Create User", class: "sub-btn" %>
+        <% end %>
+    </div>
+</div>

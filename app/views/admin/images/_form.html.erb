@@ -1,0 +1,10 @@
+<div class="form">
+  <div class="field-wrap">
+    <%= form_for [:admin, @image] do |f| %>
+    <%= f.label      :image, "Attach an Image" %><br />
+    <%= f.file_field :image  %>
+    <%= f.submit "Create Image", class: "sub-btn" %>
+    <% end %>
+  </div>
+</div>
+<%= link_to "Back to Admin Dashboard", admin_dashboard_index_path %>

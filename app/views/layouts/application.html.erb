@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IdeaBox</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <div class="nav">
+      <li> <%= link_to 'Log Out', logout_path, method: :delete %> </li>
+    </div>
+        <% if current_user && current_user.admin? %>
+        <p><%= link_to "admin dashboard", admin_dashboard_index_path %></p>
+        <% elsif  current_user %>
+        <p><%= link_to "", user_path(current_user) %></p>
+        <% else %>
+         <p><%= link_to 'home', root_path %>
+      <% end %>
+    <p class="flash">
+      <% flash.each do |message_type, message| %>
+        <%= message %>
+        <% end %>
+      </p>
+    <%= yield %>
+  </body>
+</html>
