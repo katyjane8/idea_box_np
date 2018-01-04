@@ -10,7 +10,8 @@ describe "When I visit new image page" do
       visit new_admin_image_path
       expect(current_path).to eq(new_admin_image_path)
 
-      expect(page).to have_content("Attach an Image")
+      expect(page).to have_content("Name")
+      expect(page).to have_content("Url")
     end
 
     scenario "I can create a new image" do
@@ -19,7 +20,7 @@ describe "When I visit new image page" do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
       visit new_admin_image_path
-      attach_file("image[image]", File.join(Rails.root, '/app/assets/images/1.jpg'))
+      image = create(:image)
 
       click_on "Create Image"
 
